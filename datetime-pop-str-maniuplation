@@ -1,0 +1,14 @@
+def fndateandtime(dat, pop):
+    from datetime import datetime
+    import re
+    dt = str(dat)
+    ad = datetime.strptime(dt, "%d/%m/%Y")
+    form = ad.strftime("%B %d, %Y")
+    pl,pr = pop.split('-')
+    pls = pl.strip()
+    prs = pr.strip()
+    pt = int(re.sub(r'\D',"", prs)) - int(re.sub(r'\D',"", pls))
+    return form + " : " +  str(pt)
+  
+__esri_field_calculator_splitter__
+fndateandtime( !FGDLAQDATE!, !POP_RANGE! )
