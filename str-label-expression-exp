@@ -1,0 +1,11 @@
+def FindLabel ( [Shipwreck] , [Type] , [Year_Sunk] , [Status]  ):
+ Static = "Name = " + [Shipwreck] +"\nType = " + [Type] + "\nYear Sunk: " + [Year_Sunk] 
+ Status = "\nStatus: " + [Status]  
+ for status in [Status] :
+  if len( [Status] ) <= 1 :
+   St = "\nStatus: unknown"
+   return Static + St
+  elif len( [Status] ) > 7:
+      return "<CLR red='255'>" + Static + Status + "</CLR>"
+  else:
+   return Static + Status
